@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Lemonade_Stand
-{
+{ 
     public static int assetAmount;
 
     static int startPrice = 2;
@@ -39,6 +39,5 @@ public class Lemonade_Stand
         var trueProfit = (profit * assetAmount) - (costs * assetAmount);
         return (float)trueProfit;
     }
-
-
+   
 }

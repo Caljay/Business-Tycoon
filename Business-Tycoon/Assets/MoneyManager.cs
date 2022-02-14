@@ -2,7 +2,7 @@ using System;
 
 public static class MoneyManager 
 {
-    private static double money = 50;
+    private static double money = 100;
 
 
     /// <summary>

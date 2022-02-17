@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class ProfitsManager : MonoBehaviour
 {
 
@@ -11,16 +11,16 @@ public class ProfitsManager : MonoBehaviour
 
     public void EndTurn()
     {
+        MoneyManager.CalculateAllProfits();
+
         CollectProfits();
 
     }
-      void CollectProfits()
+       void CollectProfits()
     {
-        var placeholder = Lemonade_Stand.CalculateProfits();
-        var placeholder2 = Bakery.CalculateProfits();
-        // var placeholder = Lemonade_Stand.CalculateProfits();
-        var profitEnd = placeholder + placeholder2;
+        float profitEnd = 0;
 
+       
        
         print(MoneyManager.GetMoneyAmount() * 0.5f);
         MoneyManager.RemoveMoney((MoneyManager.GetMoneyAmount() * taxRate));

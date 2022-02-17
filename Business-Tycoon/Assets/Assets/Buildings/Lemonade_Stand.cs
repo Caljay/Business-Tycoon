@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Lemonade_Stand
+public class Lemonade_Stand : MoneyManager.ICalculateProfits
 { 
     public static int assetAmount;
 
@@ -25,7 +25,7 @@ public class Lemonade_Stand
     {
         CalculateNewPrices();
 
-        var playerBal = MoneyManager.GetMoneyAmount();
+        float playerBal = (float)MoneyManager.GetMoneyAmount();
         if (currentPrice <= playerBal)
         {
             assetAmount++;
@@ -34,10 +34,11 @@ public class Lemonade_Stand
 
 
     }
-    public static float CalculateProfits()
+    public static void SendProfits()
     {
         var trueProfit = (profit * assetAmount) - (costs * assetAmount);
-        return (float)trueProfit;
+        MoneyManager.AddMoney((float)trueProfit);
     }
-   
+ 
+  
 }

@@ -9,7 +9,7 @@ public class UserUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,6 +19,6 @@ public class UserUI : MonoBehaviour
         text.text = $"Money {Math.Round((float)MoneyManager.GetMoneyAmount())} Lemonade {Lemonade_Stand.assetAmount} Bakery {Bakery.assetAmount}";
 
 
-    }
 
+    }
 }

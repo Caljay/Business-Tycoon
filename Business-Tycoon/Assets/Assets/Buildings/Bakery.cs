@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bakery 
+public class Bakery : MoneyManager.ICalculateProfits
 {
     static int startPrice = 2;
    public static int assetAmount;
@@ -34,9 +34,11 @@ public class Bakery
 
 
     }
-    public static float CalculateProfits()
+    public static void SendProfits()
     {
         var trueProfit = (profit * assetAmount) - (costs * assetAmount);
-        return (float)trueProfit;
+        MoneyManager.AddMoney((float)trueProfit);
     }
+  
+
 }

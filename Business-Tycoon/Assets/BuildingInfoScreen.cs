@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Linq;
+using AssetInformation;
 
 public class BuildingInfoScreen : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class BuildingInfoScreen : MonoBehaviour
     {
 
 
-        var type = typeof(MoneyManager.ICalculateProfits);
+        var type = typeof(ICalculateProfits);
 
         var types = AppDomain.CurrentDomain.GetAssemblies()
             .SelectMany(s => s.GetTypes())

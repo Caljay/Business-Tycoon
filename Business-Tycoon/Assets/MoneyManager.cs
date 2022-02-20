@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using AssetInformation;
 
-public static class MoneyManager 
+public static class MoneyManager
 {
     private static double money = 100;
 
@@ -88,13 +89,7 @@ public static class MoneyManager
 
       
     }
-    public interface ICalculateProfits
-    {
-       public static void SendProfits()
-        {
-            throw new NotImplementedException();
-        }
-    }
+ 
     #endregion
 }
 

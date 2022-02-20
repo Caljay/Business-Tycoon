@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using AssetInformation;
 
-public class Lemonade_Stand : MoneyManager.ICalculateProfits
+public class Lemonade_Stand : ICalculateProfits, IAsset
 { 
     public static int assetAmount;
+    public static double currentPrice = 2;
+    public static float profit = 5f;
+    public static float costs = 3f;
 
-    static int startPrice = 2;
-   static float multiplier = 1.0625f;
-   public static double currentPrice { get; private set;  }
-   static float profit = 5f;
-   static float costs = 3f;
+     static float multiplier = 1.0625f;
 
 
     public static void CalculateNewPrices()
     {
-        currentPrice = startPrice * (System.Math.Pow(multiplier, assetAmount));
+        currentPrice = currentPrice * (System.Math.Pow(multiplier, assetAmount));
 
 
 

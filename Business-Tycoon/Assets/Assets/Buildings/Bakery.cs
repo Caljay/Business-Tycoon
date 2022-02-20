@@ -1,20 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using AssetInformation;
 
-public class Bakery : MoneyManager.ICalculateProfits
+public class Bakery : ICalculateProfits, IAsset
 {
-    static int startPrice = 2;
-   public static int assetAmount;
-    static float multiplier = 1.0625f;
-    static double currentPrice;
-    static float profit = 10f;
-    static float costs = 7f;
+    public static int assetAmount;
+    public static float profit = 10f;
+    public static double currentPrice = 2;
+    public static float costs = 7f;
+
+
+     static float multiplier = 1.0625f;
 
 
     public static void CalculateNewPrices()
     {
-        currentPrice = startPrice * (System.Math.Pow(multiplier, assetAmount));
+        currentPrice = currentPrice * (System.Math.Pow(multiplier, assetAmount));
 
 
 

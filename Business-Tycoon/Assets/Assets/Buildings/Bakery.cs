@@ -8,8 +8,8 @@ public class Bakery : MoneyManager.ICalculateProfits
    public static int assetAmount;
     static float multiplier = 1.0625f;
     static double currentPrice;
-    static float profit = 5;
-    static float costs = 0;
+    static float profit = 10f;
+    static float costs = 7f;
 
 
     public static void CalculateNewPrices()

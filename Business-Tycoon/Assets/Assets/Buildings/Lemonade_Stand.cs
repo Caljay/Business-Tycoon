@@ -7,9 +7,9 @@ public class Lemonade_Stand : MoneyManager.ICalculateProfits
 
     static int startPrice = 2;
    static float multiplier = 1.0625f;
-   static double currentPrice;
-   static float profit = 5;
-   static float costs = 0;
+   public static double currentPrice { get; private set;  }
+   static float profit = 5f;
+   static float costs = 3f;
 
 
     public static void CalculateNewPrices()

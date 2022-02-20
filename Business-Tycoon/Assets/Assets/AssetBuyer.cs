@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using System;
+
 public class AssetBuyer : MonoBehaviour
 {
     #region simple shops 
@@ -13,16 +10,6 @@ public class AssetBuyer : MonoBehaviour
     public void BuyBakery()
     {
         Bakery.Buy();
-    }
-    
-    public void DoStuff(string msg)
-    {
-        print(msg);
-    }
-    private void Start()
-    {
-
-  
     }
 
 

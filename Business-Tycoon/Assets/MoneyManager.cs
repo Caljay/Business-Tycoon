@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 
 public static class MoneyManager 
 {
     private static double money = 100;
 
+    #region Low Level
 
     /// <summary>
     /// removes money from the player balance
@@ -42,7 +44,17 @@ public static class MoneyManager
         return money;
     }
 
-    public static void CalculateAllProfits()
+    #endregion
+
+    #region ProfitCalculations
+    private static void CalculateAllProfits()
+    {
+
+        //multithreaded?
+        
+
+    }
+    public static void CalculateAllProfits_()
     {
 
 
@@ -72,13 +84,10 @@ public static class MoneyManager
             }
 
         }
-       
 
 
+      
     }
-
-
-
     public interface ICalculateProfits
     {
        public static void SendProfits()
@@ -86,6 +95,6 @@ public static class MoneyManager
             throw new NotImplementedException();
         }
     }
-
+    #endregion
 }
 

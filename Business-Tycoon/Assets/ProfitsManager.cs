@@ -11,7 +11,7 @@ public class ProfitsManager : MonoBehaviour
 
     public void EndTurn()
     {
-        MoneyManager.CalculateAllProfits();
+      
 
         CollectProfits();
 
@@ -22,9 +22,9 @@ public class ProfitsManager : MonoBehaviour
 
        
        
-        print(MoneyManager.GetMoneyAmount() * 0.5f);
+        
         MoneyManager.RemoveMoney((MoneyManager.GetMoneyAmount() * taxRate));
-    
+        MoneyManager.CalculateAllProfits_();
         MoneyManager.AddMoney(profitEnd);
     }
 

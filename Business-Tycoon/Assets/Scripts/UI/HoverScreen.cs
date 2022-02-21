@@ -24,7 +24,7 @@ public class HoverScreen : MonoBehaviour
     private void Start()
     {
 
-        buildingTypes = AssetInformation.AssetInfo.GetAllAssetTypesAsList();
+        buildingTypes = AssetInfo.GetAllAssetTypesAsList();
 
        
     }

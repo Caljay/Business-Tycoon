@@ -11,7 +11,7 @@ public class ProfitsManager : MonoBehaviour
 
     [SerializeField] float taxRate = 0.125f;
 
-    public void EndTurn()
+    public void EndMonth()
     {
       
 

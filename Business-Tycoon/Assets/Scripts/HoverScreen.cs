@@ -23,37 +23,18 @@ public class HoverScreen : MonoBehaviour
     }
     private void Start()
     {
-        var type = typeof(ICalculateProfits);
 
-        var types = AppDomain.CurrentDomain.GetAssemblies()
-            .SelectMany(s => s.GetTypes())
-            .Where(p => type.IsAssignableFrom(p) && p.IsClass && !p.IsInterface);
-
-        foreach (var item in types)
-        {
-            if (!item.IsInterface)
-            {
-
-                buildingTypes.Add(item);
-
-             
-            }
-
-        }
-
-
+        buildingTypes = AssetInformation.AssetInfo.GetAllAssetTypesAsList();
 
        
     }
 
     public void Enter(string name)
     {
-        print("entered");
+
         assetName = name;
        
-        Vector3 mousePos = Input.mousePosition;
-        mousePos.y += 50f;
-        hoverPanel.transform.position = mousePos;
+      
 
         hoverPanel.SetActive(true);
 
@@ -61,7 +42,7 @@ public class HoverScreen : MonoBehaviour
     }
     public void Exit()
     {
-        print("exited");
+       
         assetName = null;
         hoverPanel.SetActive(false);
     }
@@ -108,15 +89,3 @@ public class HoverScreen : MonoBehaviour
 
     }
 }
-
-
-/* THINGS TO DISPLAY
- 
-
-
-  public static int assetAmount;
-    public static double currentPrice = 2;
-    public static float profit = 5f;
-    public static float costs = 3f;
-
- */

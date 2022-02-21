@@ -7,29 +7,19 @@ public class Lemonade_Stand : ICalculateProfits, IAsset
     public static float profit = 5f;
     public static float costs = 3f;
 
-     static float multiplier = 1.0625f;
-
-
-    public static void CalculateNewPrices()
+    public static bool Buy()
     {
-        currentPrice = currentPrice * (System.Math.Pow(multiplier, assetAmount));
-
-
-
-
-
-    }
-    public static void Buy()
-    {
-        CalculateNewPrices();
+        
 
         float playerBal = (float)MoneyManager.GetMoneyAmount();
         if (currentPrice <= playerBal)
         {
             assetAmount++;
             MoneyManager.RemoveMoney(currentPrice);
-        }
 
+            return true;
+        }
+        return false;
 
     }
     public static void SendProfits()

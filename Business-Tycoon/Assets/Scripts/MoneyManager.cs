@@ -8,7 +8,7 @@ using AssetInformation;
 public static class MoneyManager
 {
     private static double money = 100;
-
+    static List<Type> theTypes = new();
     #region Low Level
 
     /// <summary>
@@ -65,7 +65,7 @@ public static class MoneyManager
             .SelectMany(s => s.GetTypes())
             .Where(p => type.IsAssignableFrom(p) && p.IsClass && !p.IsInterface);
 
-        List<Type> theTypes = new();
+     
 
         foreach (var item in types)
         {

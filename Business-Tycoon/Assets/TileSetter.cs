@@ -15,6 +15,7 @@ public class TileSetter : MonoBehaviour
     {
         tm = tilemap.GetComponent<Tilemap>();
         cam = Camera.main;
+        
        
     }
 
@@ -46,7 +47,7 @@ public class TileSetter : MonoBehaviour
                 Instantiate(lemonade, assetPlace, Quaternion.identity);
 
             }
-
+            print(tm.size);
         }
        
     }

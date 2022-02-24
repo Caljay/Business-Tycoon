@@ -3,7 +3,13 @@ using UnityEngine;
 public class BuildingInfoScreen : MonoBehaviour
 {
     [SerializeField] GameObject buildingInfoPanel;
-  
+    [SerializeField] GameObject buildingButtonPanel;
+
+   
+
+
+ 
+
     private void Start()
     {
         

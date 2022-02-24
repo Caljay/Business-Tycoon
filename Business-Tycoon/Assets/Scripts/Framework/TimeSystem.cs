@@ -45,7 +45,6 @@ public class TimeSystem : MonoBehaviour
         }
         Display();
         FindObjectOfType<ProfitsManager>().EndMonth();
-        FindObjectOfType<EventConsole>().AddEvent($"Month ended; current date: {year}/{month}" );
 
 
 

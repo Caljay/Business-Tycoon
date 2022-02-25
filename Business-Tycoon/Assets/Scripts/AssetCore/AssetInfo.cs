@@ -6,7 +6,7 @@ namespace AssetInformation
 {
     public interface ICalculateProfits
     {
-        public static void SendProfits()
+        public void SendProfits()
         {
             throw new NotImplementedException();
         }
@@ -24,7 +24,7 @@ namespace AssetInformation
 
     }
   
-    public class AssetInfo
+    public static class AssetInfo
     {
 
        static List<Type> buildingTypes = new();
@@ -62,7 +62,27 @@ namespace AssetInformation
 
     }
 
+   
+    public static class BuiltAssets
+    {
+        static List<IAsset> allBuiltAssets = new List<IAsset>();
+        public static void AddAsset(IAsset newAsset)
+        {
 
+            allBuiltAssets.Add(newAsset);
+        
+        }
+        public static void RemoveAsset(IAsset removeAsset)
+        {
+            allBuiltAssets.Remove(removeAsset);
+        }
+
+       public static List<IAsset> GetBuildAssets()
+        {
+            return allBuiltAssets;
+        }
+
+    }
 
 
 }

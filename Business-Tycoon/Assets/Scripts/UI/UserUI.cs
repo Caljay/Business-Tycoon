@@ -12,7 +12,7 @@ public class UserUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string displayText = $"Money: {Mathf.Round((float)MoneyManager.GetMoneyAmount())}\nLemonade Stands: {Lemonade_Stand.assetAmount}\nBakeries: {Bakery.assetAmount}\n";
+        string displayText = $"Money: {Mathf.Round((float)MoneyManager.GetMoneyAmount())}";
         text.text = displayText;
         
 

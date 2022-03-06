@@ -4,13 +4,7 @@ using System.Linq;
 
 namespace AssetInformation
 {
-    public interface ICalculateProfits
-    {
-        public void SendProfits()
-        {
-            throw new NotImplementedException();
-        }
-    }
+ 
     public interface IAsset
     {
         public static int assetAmount;
@@ -18,9 +12,9 @@ namespace AssetInformation
         public static float profit;
         public static float costs;      
 
-        public static bool Buy() { return true; }
-        public static void SendProfits() { }
-
+        
+        public  void SendProfits() { }
+        public float GetProfits() { return 0f;  }
 
     }
   
@@ -35,7 +29,7 @@ namespace AssetInformation
 
 
 
-            var type = typeof(ICalculateProfits);
+            var type = typeof(IAsset);
 
             var types = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(s => s.GetTypes())
@@ -66,6 +60,7 @@ namespace AssetInformation
     public static class BuiltAssets
     {
         static List<IAsset> allBuiltAssets = new List<IAsset>();
+
         public static void AddAsset(IAsset newAsset)
         {
 

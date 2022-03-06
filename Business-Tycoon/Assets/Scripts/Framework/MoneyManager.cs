@@ -58,36 +58,19 @@ public static class MoneyManager
     public static void CalculateAllProfits_()
     {
 
-
-        var type = typeof(ICalculateProfits);
-
-        var types = AppDomain.CurrentDomain.GetAssemblies()
-            .SelectMany(s => s.GetTypes())
-            .Where(p => type.IsAssignableFrom(p) && p.IsClass && !p.IsInterface);
-
-     
-
-        foreach (var item in types)
-        {
-            if (!item.IsInterface)
-            {
-                theTypes.Add(item);
-
-                var something = item.GetMethod("SendProfits");
-
-                // var anotherThing = item.GetInterface("ICalculateProfits");
-
-                something.Invoke(type.GetType(), null);
-
-                theTypes.Add(item);
-
-                //can use the theTypes var to see what is in the thing
-            }
-
-        }
-
-
+       // List<ICalculateProfits> builtAssets = BuiltAssets.GetBuildAssets() as List<ICalculateProfits>;
+        List<IAsset> builtAssets = BuiltAssets.GetBuildAssets();
       
+
+        foreach (IAsset item in builtAssets)
+        {
+
+           float profits =  item.GetProfits();
+            AddMoney(profits); 
+        }
+       
+       
+
     }
  
     #endregion

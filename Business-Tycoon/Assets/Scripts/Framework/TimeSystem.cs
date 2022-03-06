@@ -6,7 +6,7 @@ public class TimeSystem : MonoBehaviour
 {
     int year = 0;
     int month = 1;
-    [SerializeField] float monthTimer = 60f;
+    [SerializeField] float monthTimer = 5f;
     [SerializeField] TMPro.TextMeshProUGUI dateText;
 
     private void Start()
@@ -29,7 +29,7 @@ public class TimeSystem : MonoBehaviour
         if (monthTimer <= 0)
         {
             EndMonth();
-            monthTimer = 60f;
+            monthTimer = 5f;
         }
     }
 
@@ -43,12 +43,15 @@ public class TimeSystem : MonoBehaviour
             year++;
             month = 1;
         }
+
         Display();
+        string msg = $"Current date {year}/{month}";
+        FindObjectOfType<EventConsole>().AddEvent(msg);
         FindObjectOfType<ProfitsManager>().EndMonth();
 
 
 
-        monthTimer = 60f;
+        monthTimer = 5f;
     }
 
     void Display()

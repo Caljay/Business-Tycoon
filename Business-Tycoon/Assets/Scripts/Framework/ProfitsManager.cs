@@ -25,7 +25,7 @@ public class ProfitsManager : MonoBehaviour
        
        
         
-        MoneyManager.RemoveMoney((MoneyManager.GetMoneyAmount() * taxRate));
+     //   MoneyManager.RemoveMoney((MoneyManager.GetMoneyAmount() * taxRate));
         MoneyManager.CalculateAllProfits_();
         MoneyManager.AddMoney(profitEnd);
     }

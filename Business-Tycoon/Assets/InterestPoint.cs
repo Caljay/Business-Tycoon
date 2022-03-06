@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InterestPoint : MonoBehaviour
 {
+    //cities and such
 
-    [SerializeField] Sprite pointSprite;
+    //[SerializeField] Sprite pointSprite;
     [SerializeField] GameObject hoverPanel;
 
     // Start is called before the first frame update
@@ -16,18 +18,26 @@ public class InterestPoint : MonoBehaviour
 
     private void OnMouseOver()
     {
-
+        GetComponent<SpriteRenderer>().color = Color.green;
      
-        print("mouse over POI; display info");
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        hoverPanel.transform.position = new Vector3(50 + mousePos.x, mousePos.y, 0);
-        
-        hoverPanel.SetActive(true);
+        if (Input.GetMouseButtonDown(0))
+        {
+            hoverPanel.SetActive(true);
+            
+        }
         //will affect supply/demand with its certain traits
 
     }
+   
     private void OnMouseExit()
     {
-        hoverPanel.SetActive(false);
+        GetComponent<SpriteRenderer>().color = Color.white;
+
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Escape))
+            {
+            hoverPanel.SetActive(false);
+
+        }
+
     }
 }

@@ -1,6 +1,9 @@
 using AssetInformation;
+using UnityEngine;
 
-public class Bakery : ICalculateProfits, IAsset
+//asset or building
+// LEVEL 2
+public class Bakery : MonoBehaviour, IAsset
 {
     public static int assetAmount;
     public static float profit = 10f;

@@ -1,44 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using AssetInformation;
 
+
 public class BuildingPoint : MonoBehaviour
 {
-     IAsset asset = null;
+   
+    //actual businesess
+     public IAsset asset { get; private set; } = null;
+    public bool isAvalible = false;
 
+ 
     private void Start()
     {
-    
-    }
-    private void OnMouseDown()
-    {
-        if (asset == null)
+
+        GetComponent<SpriteRenderer>().color = Color.blue;
+
+        if(asset != null)
         {
-
-            asset = new Lemonade_Stand();
-            Debug.Log("built");
+            isAvalible = false;
         }
-       else
-        {
-            BuiltAssets.RemoveAsset(asset);
-            asset = null;
-            Debug.Log("removed");
-               
-        }
-
-
-
-    }
-
-    private void OnMouseOver()
-    {
-
-
+        else isAvalible = true;
         
-        //will affect supply/demand with its certain traits
 
     }
+public void Build(IAsset building)
+    {
+        asset = building;
+        Debug.Log(asset.GetProfits());
+        Debug.Log($"Built an asset of type {building}");
+        isAvalible = false;
+       
+        
+     
+    }
 
-    
+  public void Demolish()
+    {
+        asset = null;
+        isAvalible = true;
+    }
+
+
+
+
 }

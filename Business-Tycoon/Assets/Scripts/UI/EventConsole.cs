@@ -11,13 +11,23 @@ public class EventConsole : MonoBehaviour
 
     private void Start()
     {
-       
+        consoleTexts.text = "";
         
     }
     [ContextMenu("Start")]
-    public void AddEvent()
+    public void AddEvent(string message)
     {
+        events.Add(message);
+        if(events.Count > maxLines)
+        {
+            events.RemoveAt(0);
+        }
 
+        consoleTexts.text = null;
+        foreach (string msg in events)
+        {
+            consoleTexts.text += $"{msg}\n";
+        }
         
         
     }
